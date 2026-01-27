@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>กฤษทนาธิป เที่ยงทำ (มาร์ท)</title>
+</head>
+
+<body>
+<h1>กฤษทนาธิป เที่ยงทำ (มาร์ท)</h1>
+
+<?php
+	echo "บทที่ 10 PHP เบื้องต้น <br>";
+	print ("วิชา Web Programming <br>");
+	
+	$name = "Kitsanathip Thiangtham";
+	$age = 20 ;
+	
+	echo gettype($age) ;
+	echo "<hr>" ;
+	var_dump($name) ;
+	echo "<hr>" ;
+	
+	echo $name ;
+	echo "<hr>" ;
+	
+	$a = 10 ;
+	$b = 5 ;
+	$c = 2 ;
+	$x = ($a + $b) * $c ;
+	echo $x ; 
+?>
+
+</body>
+</html>
