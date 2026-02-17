@@ -8,5 +8,5 @@
 
   echo "<script>";
   echo "window.location='a.php';";
-  echo "/script>";
+  echo "</script>";
 ?>
