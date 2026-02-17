@@ -43,10 +43,12 @@ if(isset($_POST['Submit'])) {
     <tr>
     	<td><?php echo $data['r_id'];?></td> 
 		<td><?php echo $data['r_name'];?></td>
+		<td>xxx</td>
     </tr>
  
 <?php } ?>
 </table>
 </body>
 </html>
+
 
