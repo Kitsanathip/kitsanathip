@@ -28,6 +28,7 @@ if(isset($_POST['Submit'])) {
 	<tr>
     	<th>รหัสภาค</th> 
 		<th>ชื่อภาค</th>
+		<th>ลบ</th>
     </tr>
 
 <?php 
@@ -48,3 +49,4 @@ if(isset($_POST['Submit'])) {
 </table>
 </body>
 </html>
+
