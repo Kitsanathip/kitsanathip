@@ -30,16 +30,26 @@
 
 <?php
 if(isset($_POST['Submit'])) {
-	include_once("connectdb.php") ;
-	$rname = $_POST['rname'] ;
-	$ext = pathinfo($_FILES['pimage']['name'],PATHINFO_EXTENSION);
-	$rid = $_POST['rid'];
-	
-	$sql2 = "INSERT INTO `provinces` VALUES (NULL,'{$rname}','{$ext}','{$rid}')" ;
-	mysqli_query($conn, $sql2) or die ("insert ไม่ได้") ;
-	$pic_id = mysqli_insert_id($conn);
-	move_uploaded_file($_FILES['pimage']['tmp_name'],"images/".$pic_id.".".$ext);
+    include_once("connectdb.php");
+    $rname = mysqli_real_escape_string($conn, $_POST['rname']);
+    $rid = $_POST['rid'];
+
+    $ext = "";
+    if(!empty($_FILES['pimage']['name'])) {
+        $ext = pathinfo($_FILES['pimage']['name'], PATHINFO_EXTENSION);
+    }
+
+    $sql2 = "INSERT INTO provinces (p_name, p_ext, r_id) VALUES ('$rname','$ext','$rid')";
+    if(mysqli_query($conn, $sql2)) {
+        $pic_id = mysqli_insert_id($conn);
+        if(!empty($ext)) {
+            move_uploaded_file($_FILES['pimage']['tmp_name'], "images/".$pic_id.".".$ext);
+        }
+    } else {
+        die("insert ไม่ได้: ".mysqli_error($conn));
+    }
 }
+
 ?>
 
 <table border="1">
@@ -74,6 +84,7 @@ if(isset($_POST['Submit'])) {
 
 </body>
 </html>
+
 
 
 
