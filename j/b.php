@@ -35,7 +35,7 @@ if(isset($_POST['Submit'])) {
 	$ext = pathinfo($_FILES['pimage']['name'],PATHINFO_EXTENSION);
 	$rid = $_POST['rid'];
 	
-	$sql2 = "INSERT INTO regions VALUES (NULL,'{$rname}','{$ext}','{$rid}')" ;
+	$sql2 = "INSERT INTO `provinces` VALUES (NULL,'{$rname}','{$ext}','{$rid}')" ;
 	mysqli_query($conn, $sql2) or die ("insert ไม่ได้") ;
 	$pic_id = mysqli_insert_id($conn);
 	move_uploaded_file($_FILES['pimage']['tmp_name'],"images/".$pic_id.".".$ext);
@@ -74,6 +74,7 @@ if(isset($_POST['Submit'])) {
 
 </body>
 </html>
+
 
 
 
