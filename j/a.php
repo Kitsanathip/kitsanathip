@@ -43,13 +43,14 @@ if(isset($_POST['Submit'])) {
     <tr>
     	<td><?php echo $data['r_id'];?></td> 
 		<td><?php echo $data['r_name'];?></td>
-		<td width="50" align="center"><a href="delete_region.php"<img src="images/del.jpg" width="20"></td>
+		<td width="50" align="center"><a href="delete_region.php?id=<?php echo $data['r_id'];?>" onClick="retuen confirm('ยืนยันการลบ?');"><img src="images/del.jpg" width="20"></td>
     </tr>
  
 <?php } ?>
 </table>
 </body>
 </html>
+
 
 
 
