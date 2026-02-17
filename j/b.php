@@ -32,8 +32,13 @@
 if(isset($_POST['Submit'])) {
 	include_once("connectdb.php") ;
 	$rname = $_POST['rname'] ;
-	$sql2 = "INSER INTO regions VALUES (NULL, '{$rname}')" ;
+	$ext = pathinfo($_FILES['pimage']['name'],PATHINFO_EXTENSION);
+	$rid = $_POST['rid'];
+	
+	$sql2 = "INSER INTO regions VALUES (NULL,'{$rname}','{$ext}','{$rid}')" ;
 	mysqli_query($conn, $sql2) or die ("insert ไม่ได้") ;
+	$pic_id = mysqli_insert_id($conn);
+	copy($_FILES['pimage']['name'],"images/".$pic_id."".$ext);
 }
 ?>
 
@@ -69,3 +74,4 @@ if(isset($_POST['Submit'])) {
 
 </body>
 </html>
+
