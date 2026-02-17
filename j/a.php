@@ -43,12 +43,13 @@ if(isset($_POST['Submit'])) {
     <tr>
     	<td><?php echo $data['r_id'];?></td> 
 		<td><?php echo $data['r_name'];?></td>
-		<td>xxx</td>
+		<td width="50" align="center"><a href="delete_region.php"<img src="images/del.jpg" width="20"></td>
     </tr>
  
 <?php } ?>
 </table>
 </body>
 </html>
+
 
 
