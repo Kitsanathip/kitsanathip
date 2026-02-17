@@ -8,7 +8,7 @@
 <body>
 <h1>กฤษทนาธิป เที่ยงทำ (มาร์ท)</h1>
 
-<form method="post" action="">
+<form method="post" action=""enctype"multipart/from-data">
 	ชื่อจังหวัด <input type="text" name = "rname" autofocus required> <br>
     รูปภาพ <input type="file" name="pimage"> <br>
     ชื่อภาค
@@ -74,6 +74,7 @@ if(isset($_POST['Submit'])) {
 
 </body>
 </html>
+
 
 
 
